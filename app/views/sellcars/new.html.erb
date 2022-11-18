@@ -1,0 +1,32 @@
+<%= form_for @sellcar do |f| %>
+    <div>
+      <%= f.label :Brand %>
+      <%= f.select :brand, [['TATA','TATA'],['KIA','KIA'],['HONDA','HONDA'],['MG','MG']] %><br />
+    </div>
+
+    <div>
+    <%=f.label :Model %>
+    <%= f.text_field :model %><br />
+    </div>
+    <div>
+        <%= f.label :varient, 'varient: ' %>
+        <%= f.label :petrol %>
+        <%= f.radio_button :varient, 'Petrol' %>
+        <%= f.label :Diesel %>
+        <%= f.radio_button :varient, 'Diesel' %> <br />
+    </div>
+    <div>
+        <%=f.label :Price %>
+        <%= f.text_field :price %><br />
+    </div>
+  
+   <div>
+      <%= f.submit %>
+   </div>  
+
+  <% end %>
+
+
+
+  
+

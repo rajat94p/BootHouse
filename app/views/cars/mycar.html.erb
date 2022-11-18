@@ -1,0 +1,28 @@
+<div class="container text-center">
+  <div class="row row-cols-4">
+    <% @cars.each do |car| %>
+      <%= link_to (car) do %>
+        <div class="card" style="width: 2rem;, height: 350px;">
+        <% if car.images.attached? %>
+          <%= image_tag car.images.first %>
+        <% end %>
+      <%end%>
+      <div class="card-body">
+        Brand :<%= car.brand %>
+        Model :<%= car.model %>
+        Price :<%= car.price %>
+        Manufacturing :<%=car.manufacturing_year%>
+        Varient :<%=car.varient%>
+    </div>
+      <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <%= link_to "For Enquiry", new_enquiry_path(car_id: car.id), class:"btn btn-danger"%>
+        <%= link_to "For Enquiry", new_rating_path(car_id: car.id),class: "btn btn-success"%> 
+      </div>
+      <%= button_to 'like', car_likes_path(car.id),:method => :post, class: "bi-bi-thumbs-up" %>
+      <%= car.likes.count %>
+        </div> 
+  <%= link_to 'Back' cars_path %>
+  <%end%>
+  </div>
+  </div>
+

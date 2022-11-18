@@ -1,0 +1,49 @@
+<%= form_for @car do |f| %>
+    <div>
+      <%= f.label :Brand %>
+      <%= f.select :brand, [['TATA','TATA'],['KIA','KIA'],['HONDA','HONDA'],['MG','MG']] %><br />
+    </div>
+
+    <div>
+    <%=f.label :Model %>
+    <%= f.text_field :model %><br />
+    </div>
+
+    <div>
+    <%=f.label :Price %>
+    <%= f.text_field :price %><br />
+    </div>
+
+    <div>
+      <%= f.label :manufacturing_year %>
+      <%= f.select :manufacturing_year, (Date.today.year-20)..(Date.today.year-1), :selected => Time.current.year %>
+    </div><br />
+
+    <div>
+    <%= f.label :varient, 'varient: ' %>
+        <%= f.label :petrol %>
+        <%= f.radio_button :varient, 'Petrol' %>
+        <%= f.label :Diesel %>
+        <%= f.radio_button :varient, 'Diesel' %> <br />
+    </div>
+    <div>
+      <%= f.label :images %>
+      <%= f.file_field :images, multiple: true %>
+    </div>
+
+  <div id="reviews">
+      <%#= f.fields_for :reviews do |review| %>
+      <%#= render 'review_fields', :f  => review %>
+   <%# end %>
+   </div>
+      <div class="links">
+      <%#= link_to_add_association 'Give review', f, :reviews %>
+      </div>
+
+       <%= f.submit %>
+  <% end %>
+
+
+
+  
+
