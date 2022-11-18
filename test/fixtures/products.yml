@@ -1,9 +1,21 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  prize: 
+  Name: MyString
+  brand: MyString
+  price: 1
+  size: MyString
+  details: MyString
+  category: MyString
+  image: MyString
+  user: one
 
 two:
-  name: MyString
-  prize: 
+  Name: MyString
+  brand: MyString
+  price: 1
+  size: MyString
+  details: MyString
+  category: MyString
+  image: MyString
+  user: two

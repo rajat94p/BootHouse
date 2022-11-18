@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_one :profile, :dependent => :destroy
   has_many :products
   
+  
 
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create

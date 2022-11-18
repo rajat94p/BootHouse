@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   end
   
   
-  root'homes#index'
+  root'products#index'
   
+  resources :products
     
   
   resources :profiles

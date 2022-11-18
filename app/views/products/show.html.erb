@@ -1,0 +1,42 @@
+
+
+<!-- Only Admin is allowed to modify products -->
+<%# if logged_in? && current_user.admin? %>
+  <%#= link_to 'Edit', edit_product_path(product) %>
+  or
+  <%#= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%# end %>
+
+</p>
+</li>
+
+
+
+
+
+
+
+
+<div class="container text-center">
+  <div class="row-1">
+    <% if @product.images.attached? %>
+      <% @product.images.each do |image| %>
+          <%= image_tag image, width: "300px", height: "200px"%>
+      <% end %>
+    <%end%>
+        <div class="row-2">
+          Name :<%= @product.Name %><br />
+          Brand :<%= @product.brand %><br />
+          Price :<%= @product.price %><br />
+          Size :<%=@product.size%><br />
+          Details :<%=@product.details%><br />
+          Category :<%=@product.category%><br />
+        </div>
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+          <%= link_to "Add to Cart", product_path(product_id: @product.id), class:"btn btn-danger"%>
+          <%= link_to "Buy Now", product_path(_id: @product.id),class: "btn btn-success"%> 
+        </div>
+      </div>
+  </div>
+</div>
+
