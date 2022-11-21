@@ -23,17 +23,31 @@
     <% if user_signed_in? %>
     <% "Hi, #{current_user.phone}" %>
     <%= link_to raw("<i class=\"icon-search icon-white\">Edit Profile</i>"), 
-          edit_profile_path(current_user.profile.id), class: "btn btn-success"%>
+          edit_profile_path(current_user.profile.id), class: "btn btn-outline-light"%>
     
 
     <%= link_to raw("<i class=\"icon-search icon-white\">Sign Out</i>"), 
-           destroy_user_session_path, method: :delete, class: "btn btn-success"%>
+           destroy_user_session_path, method: :delete, class: "btn btn-outline-light"%>
     <% else %>
     
-    <%= button_to 'Sign In', new_user_session_path, class: "btn btn-success" %>
-    <%= button_to 'Sign Up', new_user_registration_path, method: :get, class: "btn btn-success" %>
+    <%= button_to 'Sign In', new_user_session_path, class: "btn btn-outline-light" %>
+    <%= button_to 'Sign Up', new_user_registration_path, method: :get, class: "btn btn-outline-light" %>
 <%end%>
 
 </div>
   </div>
 </nav>
+
+<div class="container" style="margin-top:10px">
+  <div class="row">
+    <div class="col-md-4">
+       <button type="button" class="btn btn-light btn-lg btn-block">Mens</button>
+    </div>
+    <div class="col-md-4"> 
+      <button type="button" class="btn btn-light btn-lg btn-block">Womens</button>
+    </div>
+    <div class="col-md-4"> 
+      <button type="button" class="btn btn-light btn-lg btn-block">Kids</button> 
+    </div>
+  </div>
+</div>

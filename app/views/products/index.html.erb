@@ -1,31 +1,28 @@
 <div class="container text-left">
   <div class="row" style="width:100%">
+    <% @products.each do |product| %>
     <div class="col-4">
-    <% @product.each do |product| %>
+   
       <%= link_to (product) do %>
         <div class="card" style="width: 18rem;, height: 200px;">
         <% if product.images.attached? %>
           <%= image_tag product.images.first, width: "285px" ,height: "200px"%>
         <% end %>
+      </div>
       <%end%>
         <div class="card-body">
           Name :<%= product.Name %><br>
           Brand :<%= product.brand %><br>
-          Price :<%= product.price %><br>
-          size :<%=product.size%><br>
-          Details :<%=product.details%><br>
-          Category :<%=product.category%>
+          <h5>MRP ₹:<%= product.price %></h5><br>
         </div>
-        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-          <%= link_to "Add to Cart", products_path(product_id: product.id), class:"btn btn-danger"%>
-          <%= link_to "Buy Now", products_path(product_id: product.id),class: "btn btn-success"%> 
-        </div><br>
+        
         </div>
-        </div> 
-    <%end%>
-      </div>
+       <%end%>
+   
   </div>
 </div>
 
-
-<%=link_to "Create Product", new_product_path%>
+<% if current_user && current_user.admin%>
+  <%= link_to raw("<i class=\"icon-search icon-white\">Create New Product</i>"), 
+           new_product_path, class: "btn btn-outline-dark"%>
+<%end%>

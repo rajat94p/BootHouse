@@ -30,11 +30,10 @@
       <%= f.file_field :images, multiple: true %>
     </div>
 
-   <div>
+    <div>
       <%= f.label :category %>
       <%= f.select :category_id, options_for_select(@categories.collect {|cat| [cat.Name, cat.id]}) %><br />
    </div>
-
 
     <%= f.submit %>
   <% end %>

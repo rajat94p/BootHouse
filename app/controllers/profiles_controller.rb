@@ -21,5 +21,5 @@ class ProfilesController < ApplicationController
 		params.require(:profile).permit(:first_name, :last_name, :gender, :age, :house_no, :street, :city, :state, :country, :pincode)
 	end
 
- end
+end
 

@@ -1,4 +1,5 @@
 class Category < ApplicationRecord
   belongs_to :user
-  belongs_to :product
+  validates :name, presence: true, uniqueness: true
+  has_many :products 
 end
