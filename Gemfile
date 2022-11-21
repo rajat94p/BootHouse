@@ -59,6 +59,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'devise'
 gem 'devise-i18n'
+gem "letter_opener", group: :development
 gem 'jquery-ui-rails'
 gem 'dotenv-rails'  
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'

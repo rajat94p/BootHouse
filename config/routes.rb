@@ -5,7 +5,11 @@ Rails.application.routes.draw do
    get '/users/sign_out' => 'devise/sessions#destroy'     
   end
   
-  
+    #get 'cart' to: 'cart#show'
+    post 'cart/add'
+    post 'cart/remove'
+
+    resources :cart
   root'products#index'
   
   resources :products

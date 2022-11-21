@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <%= render partial: "cart/cart" if @render_cart %>
     <%= render partial: 'common/header' %>
     <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>

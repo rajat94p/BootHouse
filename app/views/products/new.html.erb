@@ -2,7 +2,7 @@
 
     <div>
     <%=f.label :Name %>
-    <%= f.text_field :Name %><br />
+    <%= f.text_field :name %><br />
     </div>
 
     <div>
@@ -32,7 +32,7 @@
 
    <div>
       <%= f.label :category %>
-      <%= f.select :category_id, options_for_select(@categories.collect {|cat| [cat.Name, cat.id]}) %><br />
+      <%= f.select :category_id, options_for_select(@categories.collect {|cat| [cat.name, cat.id]}) %><br />
    </div>
 
 
