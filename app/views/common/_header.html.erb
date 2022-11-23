@@ -9,7 +9,7 @@
         <li class="nav-item">
           
            <% if user_signed_in? %>
-          <a class="nav-link active" aria-current="page" href="#"><%="Hi, #{current_user.phone}" %></a>
+          <a class="nav-link active text-light" aria-current="page" href="#"><%="Hi, #{current_user.username}" %></a>
           <% end %>
         </li>
     </ul> 
@@ -21,7 +21,7 @@
 
 
     <% if user_signed_in? %>
-    <% "Hi, #{current_user.phone}" %>
+    <% "Hi, #{current_user.username}" %>
     <!-- <%#= link_to raw("<i class=\"icon-search icon-white\">Edit Profile</i>"), 
           edit_profile_path(current_user.profile.id), class: "btn btn-outline-light"%>
      -->

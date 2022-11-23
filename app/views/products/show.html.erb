@@ -13,18 +13,39 @@
           Details :<%=@product.details%><br />
           
         </div>
-        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-          <%= link_to "Add to Cart", product_path(product_id: @product.id), class:"btn btn-danger"%>
-          <%= link_to "Buy Now", product_path(_id: @product.id),class: "btn btn-success"%> 
+        <div>
+      <%= link_to "ADD TO CART", cart_path,class: "btn btn-dark", data: {bs_toggle: "modal", bs_target: "#CartForm", remote: true} %>
+    </div>
+      <!-- Modal -->
+      <div class="modal fade" id="CartForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="CartFormLabel">Cart Form</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+        <!-- <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+          <%#= link_to "Add to Cart", product_path(product_id: @product.id), class:"btn btn-danger"%>
+          <%#= link_to "Buy Now", product_path(_id: @product.id),class: "btn btn-success"%> 
+        </div> -->
+      </div>
+      <div>
+      
+    </div>
+
   </div>
+</div>
 </div>
 <% if current_user && current_user.admin%>
 <%= link_to raw("<i class=\"icon-search icon-white\">Edit</i>"), 
            edit_product_path(@product), class: "btn btn-outline-dark"%>
 
-<%= link_to raw("<i class=\"icon-search icon-white\">Destroy</i>"), 
+<%= link_to raw("<i class=\"icon-search icon-white\">Delete</i>"), 
            products_path(@product), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-dark"%>
 
   <!-- <li><%#= link_to "Destroy", product_path(@product),
@@ -37,3 +58,9 @@
 
 <%= link_to raw("<i class=\"icon-search icon-white\">Back</i>"), 
            products_path(@product), class: "btn btn-outline-dark"%>
+
+
+
+
+
+
