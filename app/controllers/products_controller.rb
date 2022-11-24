@@ -1,13 +1,17 @@
 class ProductsController < ApplicationController
-	before_action :authenticate_user!, except: [:index]
 	before_action :set_categories, only: %i[ new edit]
 	  def index
-	    @products = Product.all
-	    @categories = Category.all
+	    if params[:category].present?
+	  		@products = Product.where(category: params[:category])
+
+	     else
+	     	@products = Product.all
+		end
 	  end
 
 	  def show
 	    @product = Product.find(params[:id])
+
 	  end
 
 	  def new

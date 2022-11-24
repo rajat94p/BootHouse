@@ -22,9 +22,10 @@
 
     <% if user_signed_in? %>
     <% "Hi, #{current_user.username}" %>
-    <!-- <%#= link_to raw("<i class=\"icon-search icon-white\">Edit Profile</i>"), 
+    <% if current_user.profile.present?%>
+     <%= link_to raw("<i class=\"icon-search icon-white\">Edit Profile</i>"), 
           edit_profile_path(current_user.profile.id), class: "btn btn-outline-light"%>
-     -->
+     <% end %>
 
     <%= link_to raw("<i class=\"icon-search icon-white\">Sign Out</i>"), 
            destroy_user_session_path, method: :delete, class: "btn btn-outline-light"%>
@@ -40,15 +41,12 @@
 
     <div class="container" style="margin-top:0px">
     <div class="row">
-    <div class="col-md-4">
-       <button type="button" class="btn btn-light btn-lg btn-block">Mens</button>
-              
-    </div>
-    <div class="col-md-4"> 
-      <button type="button" class="btn btn-light btn-lg btn-block">Womens</button>
-    </div>
-    <div class="col-md-4"> 
-      <button type="button" class="btn btn-light btn-lg btn-block">Kids</button> 
-    </div>
+    <center><div class="col-md-4">
+     
+ <%#= link_to raw("<i class=\"icon-search icon-white\">Mens</i>"), 
+          product_path(category_id: category.id), class: "btn btn-outline-light text-dark"%>
+
+    </div></center>
+
     </div>
     </div>

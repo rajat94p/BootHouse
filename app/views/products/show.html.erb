@@ -14,10 +14,10 @@
           
         </div>
         <div>
-      <%= link_to "ADD TO CART", cart_path,class: "btn btn-dark", data: {bs_toggle: "modal", bs_target: "#CartForm", remote: true} %>
+      <%= link_to "ADD TO CART", products_path ,class: "btn btn-dark", data: {bs_toggle: "modal", bs_target: "#CartForm", remote: true} %>
     </div>
       <!-- Modal -->
-      <div class="modal fade" id="CartForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="CartForm" tabindex="-1" role="dialog" aria-labelledby="CartFormLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -29,10 +29,8 @@
           </div>
         </div>
       </div>
-        <!-- <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-          <%#= link_to "Add to Cart", product_path(product_id: @product.id), class:"btn btn-danger"%>
-          <%#= link_to "Buy Now", product_path(_id: @product.id),class: "btn btn-success"%> 
-        </div> -->
+      <div class="CartFormModal">
+      </div>
       </div>
       <div>
       
@@ -46,11 +44,11 @@
            edit_product_path(@product), class: "btn btn-outline-dark"%>
 
 <%= link_to raw("<i class=\"icon-search icon-white\">Delete</i>"), 
-           products_path(@product), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-dark"%>
+           product_path(@product), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-outline-dark"%>
 
-  <!-- <li><%#= link_to "Destroy", product_path(@product),
+  <li><%#= link_to "Destroy", product_path(@product),
                   method: :delete,
-                  data: { confirm: "Are you sure?" } %></li> -->
+                  data: { confirm: "Are you sure?" } %></li>
 </ul>
 
 

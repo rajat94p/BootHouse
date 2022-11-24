@@ -36,6 +36,9 @@ class LineItemsController < ApplicationController
       destroy
     end
   end
+  def index
+    @line_items = current_user.cart.line_items 
+  end
 
   private
 

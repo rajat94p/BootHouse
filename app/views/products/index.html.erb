@@ -1,3 +1,6 @@
+<%= select_tag :category, options_for_select(%w[ Mens Womens Kids], params[:category]) , :onchange => "window.location.replace('/'+'category'+'/'+this.value);", prompt: "Select category", class: "btn btn-danger btn-sm dropdown-toggle"%>
+
+
 <div class="container text-left">
   <div class="row" style="width:100%">
     <% @products.each do |product| %>
