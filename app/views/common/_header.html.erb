@@ -43,9 +43,10 @@
     <div class="row">
     <center><div class="col-md-4">
      
- <%#= link_to raw("<i class=\"icon-search icon-white\">Mens</i>"), 
-          product_path(category_id: category.id), class: "btn btn-outline-light text-dark"%>
+    <%#= link_to raw("<i class=\"icon-search icon-white\">Mens</i>"), 
+          category_products_url(category_id: category.id), class: "btn btn-outline-light text-dark"%>
 
+    <%#= link_to 'Mens', category_products_path(@product, category_id:)%>
     </div></center>
 
     </div>

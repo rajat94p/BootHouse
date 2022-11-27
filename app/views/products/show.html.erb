@@ -14,14 +14,14 @@
           
         </div>
         <div>
-      <%= link_to "ADD TO CART", products_path ,class: "btn btn-dark", data: {bs_toggle: "modal", bs_target: "#CartForm", remote: true} %>
+      <%= link_to "ADD TO CART", products_path ,class: "btn btn-dark", data: {bs_toggle: "modal", bs_target: "#LineItems", remote: true} %>
     </div>
       <!-- Modal -->
-      <div class="modal fade" id="CartForm" tabindex="-1" role="dialog" aria-labelledby="CartFormLabel" aria-hidden="true">
+      <div class="modal fade" id="LineItems" tabindex="-1" role="dialog" aria-labelledby="LineItemsLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="CartFormLabel">Cart Form</h5>
+              <h5 class="modal-title" id="CartFormLabel">Line Items</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -29,7 +29,7 @@
           </div>
         </div>
       </div>
-      <div class="CartFormModal">
+      <div class="LineItemsModal">
       </div>
       </div>
       <div>

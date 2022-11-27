@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
 	before_action :authenticate_user!
 	def show 
-		@render_cart =false
+		@cart = Cart.find(params[:id])
 	end
 end

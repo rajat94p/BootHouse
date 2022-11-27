@@ -1,12 +1,15 @@
 class ProductsController < ApplicationController
 	before_action :set_categories, only: %i[ new edit]
 	  def index
-	    if params[:category].present?
-	  		@products = Product.where(category: params[:category])
-
-	     else
-	     	@products = Product.all
-		end
+	    if @products = Product.all
+				#products = @category.products.where(category_id: @category)
+	    else
+	    		@category_id = Category.find_by(name: params[:category]).id
+        	@product =Product.where(category_id: @category_id).products 	
+	     	# params[:category].present?
+	  		# @category = params[:category]
+  			# @category = Category.find_by(id: params[:id])
+			end
 	  end
 
 	  def show

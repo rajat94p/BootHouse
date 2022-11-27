@@ -15,3 +15,4 @@ ActiveStorage.start()
 import "../stylesheets/application"
 require("jquery") 
 import "bootstrap"
+import 'bootstrap-icons/font/bootstrap-icons.css'

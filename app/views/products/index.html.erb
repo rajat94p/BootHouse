@@ -1,5 +1,4 @@
-<%= select_tag :category, options_for_select(%w[ Mens Womens Kids], params[:category]) , :onchange => "window.location.replace('/'+'category'+'/'+this.value);", prompt: "Select category", class: "btn btn-danger btn-sm dropdown-toggle"%>
-
+<%#= select_tag :category, options_for_select(%w[ Mens Womens Kids], params[:category]) , :onchange => "window.location.replace('/'+'category'+'/'+this.value);", prompt: "Select category", class: "btn btn-danger btn-sm dropdown-toggle"%>
 
 <div class="container text-left">
   <div class="row" style="width:100%">
@@ -22,9 +21,12 @@
         </div>
        <%end%>
   </div>
+
 </div>
 
 <% if current_user && current_user.admin%>
   <%= link_to raw("<i class=\"icon-search icon-white\">Create New Product</i>"), 
            new_product_path, class: "btn btn-outline-dark"%>
 <%end%>
+
+

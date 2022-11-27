@@ -1,0 +1,21 @@
+<div class="modal-body">
+    <div id="all-line-items">
+    <% line_items.each do |item|%>
+        <hr>
+        <%= image_tag item.product.images.first, style: "width: 100px;height: 100px;" %>
+        <%= item.product.model %><br>
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+        <%= link_to "+", add_quantity_item_path(line_item), class:"btn btn-outline-primary", remote: true%>
+        <%= link_to "-", reduce_quantity_item_path(line_item), class:"btn btn-outline-primary", remote: true%>
+        </div>
+        <div id = "QuantityStatus<%#=item.id%>">
+        Quantity: <%#= item.quantity %><br>
+        Price: <%#= item.product.price * item.quantity%><br>
+        </div>
+    <% end %>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outlined-dark" data-bs-dismiss="modal">Close</button>
+    <%= link_to "Proceed To Buy", new_orderable_path , class: "btn btn-primary"%>
+</div>
