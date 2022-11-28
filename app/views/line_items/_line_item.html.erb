@@ -1,12 +1,14 @@
-<div class="modal-body">
+  <div class="modal-body">
     <div id="all-line-items">
-    <% line_items.each do |item|%>
-        <hr>
-        <%= image_tag item.product.images.first, style: "width: 100px;height: 100px;" %>
-        <%= item.product.model %><br>
+       <% @line_items.each do |item| %>
+        <%= image_tag item.product.images.first, style: "width: 100px;height: 100px;" %><br>
+        Name: <%= item.product.name %><br>
+        Brand: <%= item.product.brand %><br>
+        <h5>Price: <%= item.product.price %></h5><br>
+        Details: <%= item.product.details %><br>
         <div class="btn-group" role="group" aria-label="Basic outlined example">
-        <%= link_to "+", add_quantity_item_path(line_item), class:"btn btn-outline-primary", remote: true%>
-        <%= link_to "-", reduce_quantity_item_path(line_item), class:"btn btn-outline-primary", remote: true%>
+        <%= button_to "+", add_quantity_line_item_url:(@line_item), class:"btn btn-dark", remote: true%>
+        <%= button_to "-", reduce_quantity_line_item_url:(@line_item), class:"btn btn-dark", remote: true%>
         </div>
         <div id = "QuantityStatus<%#=item.id%>">
         Quantity: <%#= item.quantity %><br>
@@ -14,8 +16,9 @@
         </div>
     <% end %>
     </div>
-</div>
-<div class="modal-footer">
-    <button type="button" class="btn btn-outlined-dark" data-bs-dismiss="modal">Close</button>
-    <%= link_to "Proceed To Buy", new_orderable_path , class: "btn btn-primary"%>
-</div>
+  </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-dark">Buy Now</button>
+      </div>

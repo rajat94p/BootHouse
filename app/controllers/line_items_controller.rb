@@ -1,15 +1,10 @@
 class LineItemsController < ApplicationController
-	 before_action :authenticate_user
-   before_action :line_variable, only: %i[edit update destroy add_quantity reduce_quantity]
-   
+	 before_action :authenticate_user!
+    
    def index
-    @line_items = LineItem.all
-   end
-
-   def new
+    @line_items = current_user.cart.line_items
     @line_item = LineItem.new
-  end
-
+   end
 
   def create
     @line_items = LineItem.all
@@ -59,7 +54,5 @@ class LineItemsController < ApplicationController
   end
 
 
-  def line_variable
-    @line_item = LineItem.find(params[:id])
-  end
+  
 end

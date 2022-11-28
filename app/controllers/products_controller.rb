@@ -1,15 +1,7 @@
 class ProductsController < ApplicationController
-	before_action :set_categories, only: %i[ new edit]
+	#before_action :set_categories, only: %i[index, show]
 	  def index
-	    if @products = Product.all
-				#products = @category.products.where(category_id: @category)
-	    else
-	    		@category_id = Category.find_by(name: params[:category]).id
-        	@product =Product.where(category_id: @category_id).products 	
-	     	# params[:category].present?
-	  		# @category = params[:category]
-  			# @category = Category.find_by(id: params[:id])
-			end
+	     @products = Product.all
 	  end
 
 	  def show
@@ -54,11 +46,11 @@ class ProductsController < ApplicationController
 
 	  private
 	  def product_params
-	    params.require(:product).permit(:name, :brand, :price, :size, :details, :category_id, images:[])
+	    params.require(:product).permit(:name, :brand, :price, :details, :category_id, images:[])
 	  end
 
 	  def set_categories
-	  	@categories = Category.all
+	  	@categories = Category.find(params[:id])
 	  end
 
  end

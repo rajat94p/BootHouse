@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2022_11_23_124420) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
-    t.bigint "line_item_id", null: false
+    t.bigint "line_item_id"
     t.index ["line_item_id"], name: "index_carts_on_line_item_id"
     t.index ["user_id"], name: "index_carts_on_user_id"
   end

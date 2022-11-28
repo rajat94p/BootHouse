@@ -35,7 +35,7 @@ resources :line_items do
   end
 
 
-  get '/category/:category', to: 'products#index'
+  get '/category/:category_id', to: 'products#index'
 
   
   resources :profiles
