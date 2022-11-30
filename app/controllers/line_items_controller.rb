@@ -13,7 +13,7 @@ class LineItemsController < ApplicationController
             if @line_item.save
                 format.js
             else 
-                redirect_to :back , notice: "item is not added to cart"
+                format.html
             end
         end
     end
@@ -40,7 +40,7 @@ class LineItemsController < ApplicationController
 
   def reduce_quantity
      respond_to do |format|
-            if @line_item.update(quantity: @line_item.quantity + 1)
+            if @line_item.update(quantity: @line_item.quantity - 1)
                 format.js
             else
                 format.html

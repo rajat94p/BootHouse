@@ -1,17 +1,18 @@
 class ProductsController < ApplicationController
-	#before_action :set_categories, only: %i[index, show]
+	#before_action :category, only: %i[index, show]
 	  def index
 	     @products = Product.all
+	     @categories = Category.all
+
 	  end
 
 	  def show
 	    @product = Product.find(params[:id])
-
+	    @categories = Category.all
 	  end
 
 	  def new
 	    @product = Product.new
-	    @categories = Category.all
 	    
 	  end
 	  
@@ -49,8 +50,8 @@ class ProductsController < ApplicationController
 	    params.require(:product).permit(:name, :brand, :price, :details, :category_id, images:[])
 	  end
 
-	  def set_categories
-	  	@categories = Category.find(params[:id])
-	  end
+	  # def category
+	  # 	@categories = Category.find(params[:category_id])
+	  # end
 
  end

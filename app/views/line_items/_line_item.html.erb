@@ -10,6 +10,21 @@
         <%= button_to "+", add_quantity_line_item_url:(@line_item), class:"btn btn-dark", remote: true%>
         <%= button_to "-", reduce_quantity_line_item_url:(@line_item), class:"btn btn-dark", remote: true%>
         </div>
+        
+        <div class="btn-group mr-2" role="group" aria-label="First group">
+         Sizes:
+          <button type="button" class="btn btn-outline-dark">6</button>
+          <button type="button" class="btn btn-outline-dark">7</button>
+          <button type="button" class="btn btn-outline-dark">8</button>
+          <button type="button" class="btn btn-outline-dark">9</button>
+          <button type="button" class="btn btn-outline-dark">10</button>
+          <button type="button" class="btn btn-outline-dark">1C</button>
+          <button type="button" class="btn btn-outline-dark">2C</button>
+          <button type="button" class="btn btn-outline-dark">3C</button>
+          <button type="button" class="btn btn-outline-dark">4C</button>
+          <button type="button" class="btn btn-outline-dark">5C</button>
+        </div>
+        
         <div id = "QuantityStatus<%#=item.id%>">
         Quantity: <%#= item.quantity %><br>
         Price: <%#= item.product.price * item.quantity%><br>

@@ -1,19 +1,14 @@
 class CategoriesController < ApplicationController
-	def index
-		@categories = Category.all
-	end
-	def new
-	end
-	
+	before_action :category, only:[:show, :edit, :update, :destroy]
+
+
 	def show
-		@category = params[:category]
-  		@category = Category.find_by(id: params[:id])
-		products = @category.products.where(category_id: @category)
+		@category = Category.all
 	end
 
+	
 	private
 		def category_params
-				params.require(:category).permit(:name)
+			params.require(:category).permit(:name)
 		end
-
 end

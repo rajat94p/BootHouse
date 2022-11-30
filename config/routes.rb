@@ -5,7 +5,7 @@ Rails.application.routes.draw do
    get '/users/sign_out' => 'devise/sessions#destroy'     
   end
 
-    root'products#index'  
+  root'products#index'  
     
 
   get 'carts/:id' => 'carts#show', as: 'cart'
@@ -28,18 +28,22 @@ resources :line_items do
 
   
   resources :products 
-  # delete '/products/:id' => 'products#destroy'
+  
 
-  resources :categories, only: [:index, :show] do
-    resources :products, only: [:index, :show]
+  resources :products do 
+    member do
+      get ':category_id/1/products', to: 'products#index'
+      get ':category_id/2/products', to: 'products#index'
+      get ':category_id/3/products', to: 'products#index'
+    end
   end
-
-
-  get '/category/:category_id', to: 'products#index'
 
   
   resources :profiles
   get "profiles/:id/edit" => "profiles#edit"
 
+  get 'termscondition' => 'static_pages#termscondition'
+  get 'faq' => 'static_pages#faq'
+  get 'offers' => 'static_pages#offers'
 
 end
