@@ -1,18 +1,20 @@
 class ProductsController < ApplicationController
 	#before_action :category, only: %i[index, show]
 	  def index
-	     @products = Product.all
-	     @categories = Category.all
-
+	  	if params[:id] 
+	  	  @products = Product.where(category_id: params[:id])
+	     else
+	     	@products = Product.all
+	     end
 	  end
 
 	  def show
-	    @product = Product.find(params[:id])
 	    @categories = Category.all
 	  end
 
 	  def new
 	    @product = Product.new
+	    @categories = Category.all
 	    
 	  end
 	  
@@ -47,7 +49,7 @@ class ProductsController < ApplicationController
 
 	  private
 	  def product_params
-	    params.require(:product).permit(:name, :brand, :price, :details, :category_id, images:[])
+	    params.require(:product).permit(:name, :brand, :price, :category_id, :details, images:[])
 	  end
 
 	  # def category

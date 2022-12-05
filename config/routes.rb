@@ -29,6 +29,7 @@ resources :line_items do
   
   resources :products 
   
+  get ':category_id/1/products', to: 'products#index'
 
   resources :products do 
     member do
